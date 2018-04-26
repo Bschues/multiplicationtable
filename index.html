@@ -4,9 +4,6 @@
 <head>
     <title>Multiplication Table</title>
     <style>
-        .body {background: linear-gradient( to bottom right, lightgreen, lightcoral)
-
-        }
         .cell {
             display: inline-block;
             width: 30px;
@@ -19,42 +16,135 @@
             border: 2px coral solid;
             font-size: 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: lavender;
             
         }
-
+        
         .header {
+            display: inline-block;
+            width: 30px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            height: 30px;
+            text-align: center;
+            border: 2px coral solid;
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: lightblue;
         }
-
+        
         
     </style>
 </head>
 
 <body>
     <h1>Multiplication Table</h1>
+    
+    <br>
+    <button id="colorsc1" onclick="color1()">Color Scheme 1</button>
+    <button id="colorsc2" onclick="color2()">Color Scheme 2</button>
     <script>
-        const row= prompt ('total number of rows');
+        
+        let headers =   document.getElementsByClassName("header");
+        let cells = document.getElementsByClassName("cell");
+        function color1 () {
+            for (let i = 0; i<headers.length; i++)
+            {
+                headers[i].style = `display: inline-block;
+                width: 30px;
+                padding-top: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-bottom: 5px;
+                height: 30px;
+                text-align: center;
+                border: 2px coral solid;
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: lightblue;`
+                
+                
+            }
+            for (let i = 0; i<cells.length; i++)
+            {
+                cells[i].style = `
+                display: inline-block;
+                width: 30px;
+                padding-top: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-bottom: 5px;
+                height: 30px;
+                text-align: center;
+                border: 2px coral solid;
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: lavender;`
+            }
+            
+            
+        }
+        function color2 () {
+            for (let i = 0; i<headers.length; i++)
+            {
+                headers[i].style = `display: inline-block;
+                width: 30px;
+                padding-top: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-bottom: 5px;
+                height: 30px;
+                text-align: center;
+                border: 2px black solid;
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: indianred;`
+            }
+            for (let i = 0; i<cells.length; i++)
+            {
+                cells[i].style = `
+                display: inline-block;
+                width: 30px;
+                padding-top: 10px;
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-bottom: 5px;
+                height: 30px;
+                text-align: center;
+                border: 2px black solid;
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: lightslategrey;`
+            }
+        }
+    </script>
+    <br>
+    <script>
+        const row=prompt ('total number of rows');
         const col= prompt ('total number of columns');
-        document.write('<span class="cell header">X</span>');
+        document.write('<span class="header">X</span>');
         for (let i = 0; i <= row; i++) 
         {
-            document.write('<span class="cell header">' + i + '</span>');
+            document.write('<span class="header">' + i + '</span>');
         }
         document.write('<br>');
-
+        
         for (let y=0; y<= row; y++) {
-            document.write('<span class="cell header">' + y + '</span>')
+            document.write('<span class="header">' + y + '</span>')
             for (let x=0; x <= col; x++) 
             {
-                document.write('<span class="cell">' + y * x + '</span>')
+                document.write('<span  class="cell">' + y * x + '</span>')
             }
             document.write('<br>');
         }
-    
- 
-
+        
+        
+        
         // TODO: Write two nested for loops to output the rest of the multiplication table
-    </script>
+    </script> 
+    
 </body>
 
 </html>
